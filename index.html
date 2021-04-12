@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dijital Takvim</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .kapsayici {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            background-color: #F7DF1E;
+            height: 100px;
+            width: 400px;
+            border-radius: 25px;
+        }
+        
+        .takvim {
+            text-align: center;
+            width: 100%;
+            font-size: 90px;
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="kapsayici">
+        <div class="takvim"></div>
+    </div>
+    <script>
+        function digital_takvim() {
+            var gün = new Date().getDate();
+            var ay = new Date().getMonth();
+            var yil = new Date().getFullYear();
+            document.querySelector(".takvim").innerHTML = gün + "." + ay + "." + yil;
+        }
+        window.addEventListener("load", digital_takvim);
+    </script>
+</body>
+
+</html>
